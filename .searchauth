@@ -1,0 +1,13 @@
+@cannot('search',App\Chatty\ElasticSearch::class)
+        <div class="row">
+            <div class="col-md-10 offset-md-1 alert alert-secondary">
+                You are not authorized to view Search.
+            </div>
+        </div>
+    @else
+@endcan
+
+-- Menu security
+@can('search',App\Chatty\ElasticSearch::class)
+    <li><a class="nav-link" href="{{ route('search') }}">Search</a></li>
+@endcan

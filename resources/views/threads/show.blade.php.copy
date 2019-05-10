@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+
+    @include('returnMessage')
+    @include('errors')
+    <div class="col-sm-12">
+                
+            @foreach($threads as $thread)
+            <div class="list-group">
+                @include('partials.postroot')
+                @php
+                    // Have to use a global counter or variable scope resets the count each new child subthread
+                    $GLOBALS["subthreadCounter"]=0;
+                    $postCount = \App\Chatty\post::where('thread_id','=',$thread->id)->count()-1; 
+                    $subthreadsToDisplay = \App\Chatty\app_setting::subthreadsToDisplay();
+                    $displayThreshold = 0;
+                @endphp
+                @foreach($thread->posts()->where('id',$thread->id)->first()->children()->orderBy('date','asc')->get() as $childPost)
+                    @php($indent=1)
+                    @include('partials.postlistitem',$childPost)
+                @endforeach
+            </div>
+            @endforeach
+
+
+        </div>
+    </div>
+</div>
+@endsection

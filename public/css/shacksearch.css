@@ -1,0 +1,214 @@
+/* Overrides list-group-item from Bootstrap */ 
+.list-group-item-sm {
+    padding: 2px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Some simple styling to display tabular data with div's instead of tables */
+.divTable{
+	display: table;
+    width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: rgba(0, 0, 0, 0.03);
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 0.5px solid #999999;
+	display: table-cell;
+    padding: 3px 10px;
+    background-color:white;
+}
+.divTableHead {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+.divTableHeading {
+	background-color: rgba(0, 0, 0, 0.03);
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableButton {
+    width: 100%;
+}
+.divNoRightBorder {
+    border-right: 0;
+}
+.divNoTopBorder{
+    border-top: 0;
+}
+
+/*
+http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+*/
+
+/* styles for '...' */ 
+.block-with-text {
+	/* hide text if it more than N lines  */
+	overflow: hidden;
+	/* for set '...' in absolute position */
+	position: relative; 
+	/* use this value to count block height */
+	line-height: 1.6em;
+	/* max-height = line-height (1.2) * lines max number (3) */
+	max-height: 4.8em; 
+	/* fix problem when last visible word doesn't adjoin right side  */
+	text-align: justify;  
+	/* place for '...' */
+	margin-right: -1em;
+	padding-right: 1em;
+  }
+  /* create the ... */
+  .block-with-text:before {
+	/* Too hard to see without bolding*/
+	font-weight: bolder;
+	/* points in the end */
+	content: '...';
+	/* absolute position */
+	position: absolute;
+	/* set position to right bottom corner of block */
+	right: 0;
+	bottom: 0;
+  }
+  /* hide ... if we have text, which is less than or equal to max lines */
+  .block-with-text:after {
+	/* points in the end */
+	content: '';
+	/* absolute position */
+	position: absolute;
+	/* set position to right bottom corner of text */
+	right: 0;
+	/* set width and height */
+	width: 1em;
+	height: 1em;
+	margin-top: 0.2em;
+	/* bg color = bg color under block */
+	background: white;
+  }
+.collapsible-post {
+	/* transition: 0.2s ease-in-out; */
+}
+.collapsible-post:hover, .collapsible-post:focus {
+	background-color:rgba(10, 223, 124, 0.07);
+	border: 1px solid rgba(2, 110, 60, 0.94);
+}
+.collapsible-post-collapsed {
+	padding: 2px 10px;
+}
+.collapsible-post-body {
+	margin-right: 0px;
+}
+.collapsible-post-collapsed .collapsible-post-body {
+	/* Line height is set to 1.6 in <body> */
+	max-height: 1.6em;
+	/* white-space: nowrap; */
+	overflow: hidden;
+}
+.collapsible-post-expanded {
+	overflow: visible;
+	z-index: 1;
+	background-color:rgba(10, 223, 124, 0.07);
+	border: 1px solid rgba(2, 110, 60, 0.94);
+}
+.collapsible-post-expanded .collapsible-post-body {
+	max-height: none;
+	margin-right: -15px;
+}
+.collapsible-post-expanded .click-for-more {
+	display: none;
+}
+.collapsible-post-collapsed .click-for-more {
+	width: 20px; 
+	position: absolute; 
+	right: 0;
+	top: 0;
+	color: rgba(10, 223, 124, 0.58);
+	/* color: white; */
+	display: flex;
+	/* background-color: lightgray; */
+	height: 100%;
+}
+.thread-list-item-author {
+	color:crimson;
+	display: inline;
+	margin-right: 1em;
+}
+.thread-list-item-body {
+	/* Line height is set to 1.6 in <body> so set it to 4.8 to show 3 lines */
+	max-height: 4.8em;
+	overflow: hidden;
+	margin-right: 0px;
+}
+.thread-list-item-body .click-for-more {
+	width: 20px; 
+	position: absolute; 
+	right: 0;
+	top: 0;
+	color: rgba(10, 223, 124, 0.58);
+	/* color: white; */
+	display: flex;
+	/* background-color: lightgray; */
+	height: 100%;
+}
+.event-list-item-body {
+	/* Line height is set to 1.6 in <body> so set it to 4.8 to show 3 lines */
+	max-height: 4.8em;
+	overflow: hidden;
+	margin-right: 0px;
+}
+.event-list-item-body .click-for-more {
+	width: 20px; 
+	position: absolute; 
+	right: 0;
+	top: 0;
+	color: rgba(10, 223, 124, 0.58);
+	/* color: white; */
+	display: flex;
+	/* background-color: lightgray; */
+	height: 100%;
+}
+.highlight-parent {
+	border: 1px solid rgba(2, 110, 60, 0.937);
+	background-color: rgba(164, 226, 197, 0.035);
+	z-index:1;
+}
+.highlight-ancestor {
+	background-color: rgba(164, 226, 197, 0.035);
+	border: 1px solid rgba(2, 110, 60, 0.937);
+	z-index: 1;
+}
+.lol-badge {
+	color: white;
+}
+.lol-badge-lol {
+	background-color:orange;
+}
+.lol-badge-inf {
+	background-color:blue;
+}
+.lol-badge-tag {
+	background-color:green;
+}
+.lol-badge-wtf {
+	background-color:purple;
+}
+.lol-badge-unf {
+	background-color:red;
+}
+.lol-badge-default {
+	color: black;
+	background-color: white;
+	border: 0.5px solid black;
+}
